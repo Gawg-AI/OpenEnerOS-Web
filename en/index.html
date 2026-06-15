@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EnerOS · 能枢OS — 电力能源原生的智能体操作系统</title>
-<meta name="description" content="EnerOS（能枢OS）是一个面向电力与能源领域的原生智能体操作系统（AgentOS），将电力系统的领域知识、物理约束与运行逻辑内建为操作系统内核。">
+<title>EnerOS — Power-Native Agent Operating System for Energy</title>
+<meta name="description" content="EnerOS is a power-native Agent Operating System (AgentOS) for the electric power and energy domain, embedding domain knowledge, physical constraints, and operational logic as OS kernel primitives.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-<!-- ============ 加载动画 ============ -->
+<!-- ============ Loader ============ -->
 <div class="loader" id="loader">
   <div class="loader-core">
     <svg class="loader-svg" viewBox="0 0 100 100">
@@ -23,13 +23,13 @@
   </div>
 </div>
 
-<!-- ============ 滚动进度条 ============ -->
+<!-- ============ Scroll Progress ============ -->
 <div class="scroll-progress" id="scrollProgress"></div>
 
-<!-- ============ 导航 ============ -->
+<!-- ============ Navigation ============ -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo" aria-label="EnerOS 首页">
+    <a href="#hero" class="nav-logo" aria-label="EnerOS Home">
       <span class="logo-mark" aria-hidden="true">
         <svg class="logo-svg" viewBox="0 0 48 48" width="34" height="34">
           <defs>
@@ -39,15 +39,11 @@
               <stop offset="100%" stop-color="#00b8d4"/>
             </linearGradient>
           </defs>
-          <!-- 外层六边形描边 -->
           <polygon points="24,3 43,14 43,34 24,45 5,34 5,14" fill="none" stroke="url(#logoGradNav)" stroke-width="1.6" opacity="0.55"/>
-          <!-- 中层旋转轨道 -->
           <g class="logo-orbit">
             <ellipse cx="24" cy="24" rx="16" ry="6" fill="none" stroke="url(#logoGradNav)" stroke-width="1.1" opacity="0.7"/>
           </g>
-          <!-- 内核：能量闪电 -->
           <path class="logo-bolt" d="M26 11 L15 26 H22 L20 37 L33 21 H25 L27 11 Z" fill="url(#logoGradNav)"/>
-          <!-- 中心高光 -->
           <circle class="logo-core" cx="24" cy="24" r="2.4" fill="#fff"/>
         </svg>
       </span>
@@ -56,23 +52,23 @@
     <div class="nav-links-wrap">
       <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#why" data-spy>为什么</a></li>
-        <li><a href="#philosophy" data-spy>哲学</a></li>
-        <li><a href="#architecture" data-spy>架构</a></li>
-        <li><a href="#capabilities" data-spy>能力</a></li>
+        <li><a href="#why" data-spy>Why</a></li>
+        <li><a href="#philosophy" data-spy>Philosophy</a></li>
+        <li><a href="#architecture" data-spy>Architecture</a></li>
+        <li><a href="#capabilities" data-spy>Capabilities</a></li>
         <li><a href="#crates" data-spy>Crate</a></li>
-        <li><a href="#scenarios" data-spy>场景</a></li>
-        <li><a href="#roadmap" data-spy>路线图</a></li>
-        <li><a href="#future" data-spy>未来</a></li>
+        <li><a href="#scenarios" data-spy>Scenarios</a></li>
+        <li><a href="#roadmap" data-spy>Roadmap</a></li>
+        <li><a href="#future" data-spy>Future</a></li>
       </ul>
     </div>
     <div class="nav-actions">
-      <a href="en/index.html" class="lang-switch">EN</a>
+      <a href="../index.html" class="lang-switch">中文</a>
       <a href="https://github.com/Gawg-AI/EnerOS" target="_blank" rel="noopener" class="nav-cta">
         <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
         <span>GitHub</span>
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="菜单"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
@@ -88,60 +84,60 @@
       <span>Rust · Power-Native · AgentOS</span>
     </div>
     <h1 class="hero-title reveal" style="--d:.1s">
-      聚能以枢<br><span class="grad-text">驱动万物智能</span>
+      Converge Energy<br><span class="grad-text">Orchestrate Intelligence</span>
     </h1>
     <p class="hero-subtitle reveal" style="--d:.2s">
-      EnerOS（能枢OS）是一个面向电力与能源领域的<span class="hl">原生智能体操作系统</span>。<br>
-      它将电力系统的领域知识、物理约束与运行逻辑内建为操作系统内核，<br>
-      使 AI Agent 在能源场景中具备<span class="hl">原生理解、安全决策与自主行动</span>能力。
+      EnerOS is a <span class="hl">power-native Agent Operating System</span> for the electric power and energy domain.<br>
+      It embeds power system domain knowledge, physical constraints, and operational logic as OS kernel primitives,<br>
+      enabling AI Agents with <span class="hl">native understanding, safe decision-making, and autonomous action</span> capabilities in energy scenarios.
     </p>
     <div class="hero-cta reveal" style="--d:.3s">
       <a href="https://github.com/Gawg-AI/EnerOS" target="_blank" rel="noopener" class="btn btn-primary">
         <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-        探索代码库
+        Explore Codebase
       </a>
       <a href="#architecture" class="btn btn-ghost">
-        查看架构
+        View Architecture
         <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M8 12L2 6h12z"/></svg>
       </a>
     </div>
 
-    <!-- 统计指标 -->
+    <!-- Stats -->
     <div class="hero-stats reveal" style="--d:.4s">
       <div class="stat">
         <div class="stat-num" data-target="12" data-suffix="+">0</div>
-        <div class="stat-label">核心 Crate 模块</div>
+        <div class="stat-label">Core Crate Modules</div>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
         <div class="stat-num" data-target="14" data-suffix="">0</div>
-        <div class="stat-label">路线图阶段</div>
+        <div class="stat-label">Roadmap Phases</div>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
         <div class="stat-num" data-target="6" data-suffix="">0</div>
-        <div class="stat-label">设计哲学</div>
+        <div class="stat-label">Design Principles</div>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
         <div class="stat-num" data-target="6" data-suffix="">0</div>
-        <div class="stat-label">应用场景</div>
+        <div class="stat-label">Application Scenarios</div>
       </div>
     </div>
   </div>
   <div class="scroll-hint">
-    <span>向下滚动</span>
+    <span>Scroll Down</span>
     <div class="scroll-line"></div>
   </div>
 </header>
 
-<!-- ============ 为什么需要 EnerOS ============ -->
+<!-- ============ Why EnerOS ============ -->
 <section class="section" id="why">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-tag">01 / 问题</span>
-      <h2 class="section-title">为什么需要 <span class="grad-text">EnerOS</span>？</h2>
-      <p class="section-desc">通用 Agent 框架在电力能源领域面临根本性困境。当前，人工智能 Agent 技术正以前所未有的速度重塑各行业的运作模式，然而电力与能源领域却面临着独特的挑战——安全约束被降级为提示词级别的建议，电网拓扑结构与电气耦合关系被忽视。</p>
+      <span class="section-tag">01 / Problem</span>
+      <h2 class="section-title">Why <span class="grad-text">EnerOS</span>?</h2>
+      <p class="section-desc">General-purpose Agent frameworks face fundamental challenges in the power and energy domain. AI Agent technology is reshaping industries at an unprecedented pace, yet the power and energy domain faces unique challenges — safety constraints are degraded to prompt-level suggestions, and grid topology and electrical coupling relationships are ignored.</p>
     </div>
 
     <div class="problem-grid">
@@ -149,55 +145,55 @@
         <div class="problem-icon">
           <svg viewBox="0 0 48 48" width="40" height="40"><circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4"/><line x1="14" y1="14" x2="34" y2="34" stroke="currentColor" stroke-width="2"/></svg>
         </div>
-        <h3>物理盲区</h3>
-        <p>Agent 不理解潮流、电压、频率等物理量，无法判断决策的物理可行性。</p>
+        <h3>Physics Blindness</h3>
+        <p>Agents don't understand physical quantities like power flow, voltage, and frequency, unable to judge the physical feasibility of decisions.</p>
       </div>
       <div class="problem-card reveal" style="--d:.08s">
         <div class="problem-icon">
           <svg viewBox="0 0 48 48" width="40" height="40"><path d="M24 4 L42 14 V34 L24 44 L6 34 V14 Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M24 16 L24 32 M16 24 H32" stroke="currentColor" stroke-width="2"/></svg>
         </div>
-        <h3>约束缺失</h3>
-        <p>安全约束（N-1、热稳定、电压越限）被当作"提示词"而非系统级保障。</p>
+        <h3>Missing Constraints</h3>
+        <p>Safety constraints (N-1, thermal stability, voltage limits) are treated as "prompts" rather than system-level guarantees.</p>
       </div>
       <div class="problem-card reveal" style="--d:.16s">
         <div class="problem-icon">
           <svg viewBox="0 0 48 48" width="40" height="40"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="36" cy="12" r="4" fill="currentColor"/><circle cx="24" cy="28" r="4" fill="currentColor"/><circle cx="12" cy="40" r="4" fill="currentColor"/><circle cx="36" cy="40" r="4" fill="currentColor"/><path d="M12 12 L24 28 L36 12 M24 28 L12 40 L36 40" fill="none" stroke="currentColor" stroke-width="2" opacity=".4"/></svg>
         </div>
-        <h3>拓扑无感</h3>
-        <p>Agent 将电网视为扁平数据，无法感知拓扑结构与电气耦合关系。</p>
+        <h3>Topology Agnostic</h3>
+        <p>Agents treat the grid as flat data, unable to perceive topology structure and electrical coupling.</p>
       </div>
       <div class="problem-card reveal" style="--d:.24s">
         <div class="problem-icon">
           <svg viewBox="0 0 48 48" width="40" height="40"><circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2"/><line x1="24" y1="14" x2="24" y2="24" stroke="currentColor" stroke-width="2"/><line x1="24" y1="24" x2="32" y2="18" stroke="currentColor" stroke-width="2"/></svg>
         </div>
-        <h3>时序割裂</h3>
-        <p>电力系统是强时序耦合系统，通用框架缺乏时间维度的一等公民支持。</p>
+        <h3>Temporal Disconnect</h3>
+        <p>Power systems are strongly time-coupled; general frameworks lack first-class support for the temporal dimension.</p>
       </div>
       <div class="problem-card reveal" style="--d:.32s">
         <div class="problem-icon">
           <svg viewBox="0 0 48 48" width="40" height="40"><rect x="8" y="8" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"/><rect x="26" y="8" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"/><rect x="8" y="26" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"/><rect x="26" y="26" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"/></svg>
         </div>
-        <h3>设备异构</h3>
-        <p>变压器、断路器、逆变器各有独立模型与协议，难以统一调度。</p>
+        <h3>Device Heterogeneity</h3>
+        <p>Transformers, circuit breakers, and inverters each have independent models and protocols, making unified scheduling difficult.</p>
       </div>
       <div class="problem-card problem-card-answer reveal" style="--d:.4s">
         <div class="problem-icon problem-icon-answer">
           <svg viewBox="0 0 48 48" width="40" height="40"><path d="M26 4 L10 28 H20 L18 44 L38 18 H28 Z" fill="currentColor"/></svg>
         </div>
-        <h3>EnerOS 的回答</h3>
-        <p>不要在通用框架上"外挂"电力知识，而是<span class="hl-dark">从电力原生出发构建操作系统</span>。</p>
+        <h3>EnerOS's Answer</h3>
+        <p>Don't "bolt on" power knowledge to general frameworks — <span class="hl-dark">build an OS power-natively from the ground up</span>.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 设计哲学 ============ -->
+<!-- ============ Design Philosophy ============ -->
 <section class="section section-alt" id="philosophy">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-tag">02 / 哲学</span>
-      <h2 class="section-title">设计<span class="grad-text">哲学</span></h2>
-      <p class="section-desc">六大核心设计原则，定义电力原生智能体操作系统的底层范式。</p>
+      <span class="section-tag">02 / Philosophy</span>
+      <h2 class="section-title">Design <span class="grad-text">Philosophy</span></h2>
+      <p class="section-desc">Six core design principles defining the foundational paradigm of a power-native Agent OS.</p>
     </div>
 
     <div class="philosophy-grid">
@@ -205,65 +201,65 @@
         <div class="philo-num">01</div>
         <h3>Power-Native First</h3>
         <div class="philo-zh">电力原生优先</div>
-        <p>电力拓扑、潮流计算、设备模型不是外挂插件，而是操作系统的原生抽象。Agent 从诞生起就运行在电网的物理世界模型之上。</p>
+        <p>Power topology, power flow computation, and device models are not bolt-on plugins but native OS abstractions. Agents run on a physical world model of the grid from inception.</p>
       </div>
       <div class="philo-card reveal" style="--d:.06s">
         <div class="philo-num">02</div>
         <h3>Agent-as-Grid-Node</h3>
         <div class="philo-zh">智能体即电网节点</div>
-        <p>每个 Agent 对应电网中的一个功能节点（厂站、馈线、设备），天然具备拓扑感知与约束遵守能力。Agent 之间的通信即电网节点之间的信息交换。</p>
+        <p>Each Agent corresponds to a functional node in the grid (substation, feeder, device), inherently possessing topology awareness and constraint compliance. Inter-Agent communication mirrors information exchange between grid nodes.</p>
       </div>
       <div class="philo-card philo-card-accent reveal" style="--d:.12s">
         <div class="philo-num">03</div>
         <h3>Constraint as Kernel Law</h3>
         <div class="philo-zh">约束即内核法律</div>
-        <p>安全约束（N-1 校验、热稳定、电压限值）由内核强制执行，任何 Agent 的决策不可逾越物理可行域。安全不是提示词，而是操作系统级的硬约束。</p>
+        <p>Safety constraints (N-1 verification, thermal stability, voltage limits) are enforced by the kernel — no Agent decision can exceed the physically feasible domain. Safety is not a prompt; it's an OS-level hard constraint.</p>
       </div>
       <div class="philo-card reveal" style="--d:.18s">
         <div class="philo-num">04</div>
         <h3>Time-Series Native</h3>
         <div class="philo-zh">时序原生</div>
-        <p>电力系统是强时序耦合系统。EnerOS 将时间维度作为一等公民，支持实时数据流、历史回溯与预测推演的原生操作。</p>
+        <p>Power systems are strongly time-coupled. EnerOS treats the temporal dimension as a first-class citizen, supporting native operations for real-time data streams, historical lookback, and predictive inference.</p>
       </div>
       <div class="philo-card reveal" style="--d:.24s">
         <div class="philo-num">05</div>
         <h3>Real-Time Determinism</h3>
         <div class="philo-zh">实时确定性</div>
-        <p>电力系统对实时性有刚性需求。EnerOS 采用双执行架构：通用执行域承载 Agent 编排与 AI 推理，实时执行域保障保护逻辑与开关操作的确定性时延。安全域不可被通用域阻塞。</p>
+        <p>Power systems have rigid real-time requirements. EnerOS adopts a dual-execution architecture: the general execution domain handles Agent orchestration and AI inference, while the real-time execution domain guarantees deterministic latency for protection logic and switching operations. The safety domain cannot be blocked by the general domain.</p>
       </div>
       <div class="philo-card reveal" style="--d:.3s">
         <div class="philo-num">06</div>
         <h3>Open &amp; Interoperable</h3>
         <div class="philo-zh">开放与互操作</div>
-        <p>标准化的 Agent 通信协议与设备接入规范，支持异构能源设备与多厂商系统的即插即用。</p>
+        <p>Standardized Agent communication protocols and device access specifications enable plug-and-play for heterogeneous energy devices and multi-vendor systems.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 系统架构 ============ -->
+<!-- ============ System Architecture ============ -->
 <section class="section" id="architecture">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-tag">03 / 架构</span>
-      <h2 class="section-title">系统<span class="grad-text">架构</span></h2>
-      <p class="section-desc">双执行架构：通用执行域 + 实时执行域。将系统划分为两个执行域，兼顾 AI 推理的复杂计算与电网控制的硬实时保证。</p>
+      <span class="section-tag">03 / Architecture</span>
+      <h2 class="section-title">System <span class="grad-text">Architecture</span></h2>
+      <p class="section-desc">Dual-execution architecture: General Domain + Real-Time Domain. The system is partitioned into two execution domains, balancing complex AI inference computation with hard real-time guarantees for grid control.</p>
     </div>
 
-    <!-- 双执行架构可视化 -->
+    <!-- Dual-Execution Architecture Visualization -->
     <div class="arch-dual reveal">
       <div class="arch-domain arch-domain-general">
         <div class="arch-domain-head">
-          <span class="arch-domain-tag">通用执行域</span>
+          <span class="arch-domain-tag">General Execution Domain</span>
           <span class="arch-domain-en">General Domain</span>
         </div>
         <div class="arch-domain-body">
-          <div class="arch-task">Agent 运行时</div>
-          <div class="arch-task">AI 推理引擎</div>
-          <div class="arch-task">规划与优化</div>
-          <div class="arch-task">人机交互</div>
+          <div class="arch-task">Agent Runtime</div>
+          <div class="arch-task">AI Inference Engine</div>
+          <div class="arch-task">Planning & Optimization</div>
+          <div class="arch-task">Human-Machine Interaction</div>
         </div>
-        <div class="arch-domain-latency">非确定性 · 响应时间：<strong>秒级 ~ 分钟级</strong></div>
+        <div class="arch-domain-latency">Non-deterministic · Latency: <strong>seconds to minutes</strong></div>
       </div>
 
       <div class="arch-gateway">
@@ -272,123 +268,123 @@
           <path d="M4 8 L20 8 M4 16 L20 16"/>
           <circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"/>
         </svg>
-        <div class="arch-gateway-label">实时安全网关<br><span>RT Safety Gateway</span></div>
-        <div class="arch-gateway-sub">跨域通信 · 指令下发 · 状态同步 · 优先级仲裁 · 约束校验</div>
+        <div class="arch-gateway-label">Real-Time Safety Gateway<br><span>RT Safety Gateway</span></div>
+        <div class="arch-gateway-sub">Cross-domain communication · Command dispatch · State sync · Priority arbitration · Constraint verification</div>
       </div>
 
       <div class="arch-domain arch-domain-realtime">
         <div class="arch-domain-head">
-          <span class="arch-domain-tag arch-domain-tag-rt">实时执行域</span>
+          <span class="arch-domain-tag arch-domain-tag-rt">Real-Time Execution Domain</span>
           <span class="arch-domain-en">Real-Time Domain</span>
         </div>
         <div class="arch-domain-body">
-          <div class="arch-task">继电保护逻辑</div>
-          <div class="arch-task">开关操作执行</div>
-          <div class="arch-task">故障隔离</div>
-          <div class="arch-task">频率调节</div>
+          <div class="arch-task">Relay Protection Logic</div>
+          <div class="arch-task">Switching Operation Execution</div>
+          <div class="arch-task">Fault Isolation</div>
+          <div class="arch-task">Frequency Regulation</div>
         </div>
-        <div class="arch-domain-latency">确定性 · 响应时间：<strong>微秒级 ~ 毫秒级</strong></div>
+        <div class="arch-domain-latency">Deterministic · Latency: <strong>microseconds to milliseconds</strong></div>
       </div>
     </div>
 
-    <!-- 核心设计原则 -->
+    <!-- Core Design Principles -->
     <div class="arch-principles">
       <div class="principle reveal" style="--d:0s">
         <div class="principle-icon">🛡️</div>
-        <h4>安全域不可被通用域阻塞</h4>
-        <p>实时执行域的任务拥有最高优先级，通用域的任何操作不得影响实时执行的确定性。</p>
+        <h4>Safety domain cannot be blocked by general domain</h4>
+        <p>Real-time domain tasks have the highest priority; no general domain operation may affect real-time execution determinism.</p>
       </div>
       <div class="principle reveal" style="--d:.08s">
         <div class="principle-icon">➡️</div>
-        <h4>单向信任</h4>
-        <p>实时执行域可直接读取通用域的决策指令，但通用域不可直接干预实时执行域的调度。</p>
+        <h4>One-Way Trust</h4>
+        <p>The real-time domain can directly read decision commands from the general domain, but the general domain cannot directly interfere with real-time domain scheduling.</p>
       </div>
       <div class="principle reveal" style="--d:.16s">
         <div class="principle-icon">🔒</div>
-        <h4>跨域通信经网关</h4>
-        <p>所有通用域→实时执行域的指令必须经过网关的约束校验与优先级仲裁。</p>
+        <h4>Cross-Domain via Gateway</h4>
+        <p>All general→real-time domain commands must pass through the gateway's constraint verification and priority arbitration.</p>
       </div>
       <div class="principle reveal" style="--d:.24s">
         <div class="principle-icon">⚡</div>
-        <h4>故障降级</h4>
-        <p>当通用域异常时，实时执行域自动切换到本地保护逻辑，确保电网安全不依赖 AI。</p>
+        <h4>Fault Degradation</h4>
+        <p>When the general domain fails, the real-time domain automatically switches to local protection logic, ensuring grid safety doesn't depend on AI.</p>
       </div>
     </div>
 
-    <!-- 分层架构总览 -->
+    <!-- Layered Architecture Overview -->
     <div class="section-sub-head reveal">
-      <h3>分层架构总览</h3>
-      <p>从应用到基础设施的五层架构，清晰分离职责与抽象层次。</p>
+      <h3>Layered Architecture Overview</h3>
+      <p>A five-layer architecture from application to infrastructure, clearly separating responsibilities and abstraction levels.</p>
     </div>
 
     <div class="layer-stack reveal">
       <div class="layer layer-app">
         <div class="layer-label">
-          <span class="layer-name">应用层</span>
+          <span class="layer-name">Application Layer</span>
           <span class="layer-en">Application Layer</span>
         </div>
         <div class="layer-items">
-          <span class="layer-item">调度 Agent</span>
-          <span class="layer-item">运维 Agent</span>
-          <span class="layer-item">规划 Agent</span>
-          <span class="layer-item">交易 Agent</span>
-          <span class="layer-item">故障诊断</span>
-          <span class="layer-item">负荷预测</span>
-          <span class="layer-item">能效优化</span>
+          <span class="layer-item">Dispatch Agent</span>
+          <span class="layer-item">Operation Agent</span>
+          <span class="layer-item">Planning Agent</span>
+          <span class="layer-item">Trading Agent</span>
+          <span class="layer-item">Fault Diagnosis</span>
+          <span class="layer-item">Load Forecasting</span>
+          <span class="layer-item">Energy Efficiency</span>
         </div>
       </div>
       <div class="layer layer-runtime">
         <div class="layer-label">
-          <span class="layer-name">Agent 运行时层</span>
+          <span class="layer-name">Agent Runtime Layer</span>
           <span class="layer-en">Agent Runtime</span>
         </div>
         <div class="layer-items">
-          <span class="layer-item">生命周期管理</span>
-          <span class="layer-item">记忆存储</span>
-          <span class="layer-item">工具引擎</span>
-          <span class="layer-item">多智能体协作</span>
-          <span class="layer-item">推理引擎</span>
-          <span class="layer-item">安全守卫</span>
-          <span class="layer-item">电网感知上下文注入</span>
+          <span class="layer-item">Lifecycle Management</span>
+          <span class="layer-item">Memory Storage</span>
+          <span class="layer-item">Tool Engine</span>
+          <span class="layer-item">Multi-Agent Collaboration</span>
+          <span class="layer-item">Reasoning Engine</span>
+          <span class="layer-item">Safety Guard</span>
+          <span class="layer-item">Grid-Aware Context Injection</span>
         </div>
       </div>
       <div class="layer layer-kernel">
         <div class="layer-label">
-          <span class="layer-name">电力原生内核</span>
+          <span class="layer-name">Power-Native Kernel</span>
           <span class="layer-en">Power-Native Kernel</span>
         </div>
         <div class="layer-items">
-          <span class="layer-item">拓扑引擎 (图模型)</span>
-          <span class="layer-item">潮流引擎 (PF/OPF)</span>
-          <span class="layer-item">约束执行器 (N-1/热稳定/电压)</span>
-          <span class="layer-item">设备模型库 (IEC/GB)</span>
-          <span class="layer-item">时序引擎</span>
-          <span class="layer-item">事件总线</span>
+          <span class="layer-item">Topology Engine (Graph Model)</span>
+          <span class="layer-item">Power Flow Engine (PF/OPF)</span>
+          <span class="layer-item">Constraint Executor (N-1/Thermal/Voltage)</span>
+          <span class="layer-item">Equipment Model Library (IEC/GB)</span>
+          <span class="layer-item">Time-Series Engine</span>
+          <span class="layer-item">Event Bus</span>
         </div>
       </div>
       <div class="layer layer-gateway">
         <div class="layer-label">
-          <span class="layer-name">实时安全网关</span>
+          <span class="layer-name">RT Safety Gateway</span>
           <span class="layer-en">RT Safety Gateway</span>
         </div>
         <div class="layer-items">
-          <span class="layer-item">跨域通信</span>
-          <span class="layer-item">指令下发</span>
-          <span class="layer-item">状态同步</span>
-          <span class="layer-item">优先级仲裁</span>
-          <span class="layer-item">约束校验</span>
+          <span class="layer-item">Cross-Domain Comm</span>
+          <span class="layer-item">Command Dispatch</span>
+          <span class="layer-item">State Sync</span>
+          <span class="layer-item">Priority Arbitration</span>
+          <span class="layer-item">Constraint Verification</span>
         </div>
       </div>
       <div class="layer layer-infra">
         <div class="layer-label">
-          <span class="layer-name">基础设施层</span>
+          <span class="layer-name">Infrastructure Layer</span>
           <span class="layer-en">Infrastructure</span>
         </div>
         <div class="layer-items">
-          <span class="layer-item">继电保护</span>
-          <span class="layer-item">开关操作</span>
-          <span class="layer-item">故障隔离</span>
-          <span class="layer-item">频率调节</span>
+          <span class="layer-item">Relay Protection</span>
+          <span class="layer-item">Switching Ops</span>
+          <span class="layer-item">Fault Isolation</span>
+          <span class="layer-item">Freq Regulation</span>
           <span class="layer-item">GOOSE</span>
           <span class="layer-item">SCADA</span>
           <span class="layer-item">IEC 61850</span>
@@ -402,13 +398,13 @@
   </div>
 </section>
 
-<!-- ============ 核心能力 ============ -->
+<!-- ============ Core Capabilities ============ -->
 <section class="section section-alt" id="capabilities">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-tag">04 / 能力</span>
-      <h2 class="section-title">核心<span class="grad-text">能力</span></h2>
-      <p class="section-desc">六大核心能力，让 Agent 天然"懂电"。</p>
+      <span class="section-tag">04 / Capabilities</span>
+      <h2 class="section-title">Core <span class="grad-text">Capabilities</span></h2>
+      <p class="section-desc">Six core capabilities that make Agents natively "understand power".</p>
     </div>
 
     <div class="cap-grid">
@@ -425,8 +421,8 @@
             </g>
           </svg>
         </div>
-        <h3>电网拓扑一等公民</h3>
-        <p>电网拓扑图是 EnerOS 的核心数据结构。Agent 通过拓扑感知上下文自动获取其所在节点的电气关系、上下游设备与运行状态，无需显式查询。</p>
+        <h3>Grid Topology as First-Class Citizen</h3>
+        <p>The grid topology graph is EnerOS's core data structure. Agents automatically acquire electrical relationships, upstream/downstream devices, and operational status of their node through topology-aware context — no explicit queries needed.</p>
       </div>
       <div class="cap-card reveal" style="--d:.08s">
         <div class="cap-visual">
@@ -436,8 +432,8 @@
             <circle cx="60" cy="70" r="4" fill="currentColor"/>
           </svg>
         </div>
-        <h3>物理约束决策</h3>
-        <p>所有 Agent 的决策输出经过电力原生内核的约束校验——潮流是否收敛、电压是否越限、线路是否过载。不满足物理约束的决策在内核层即被拒绝。</p>
+        <h3>Physics-Constrained Decisions</h3>
+        <p>All Agent decision outputs undergo constraint verification by the power-native kernel — whether power flow converges, voltage exceeds limits, or lines are overloaded. Decisions failing physical constraints are rejected at the kernel level.</p>
       </div>
       <div class="cap-card reveal" style="--d:.16s">
         <div class="cap-visual">
@@ -448,8 +444,8 @@
             <g fill="currentColor" opacity=".7"><rect x="38" y="45" width="19" height="6"/><rect x="38" y="55" width="14" height="6"/><rect x="90" y="45" width="19" height="6"/><rect x="90" y="55" width="16" height="6"/><rect x="142" y="45" width="19" height="6"/><rect x="142" y="55" width="13" height="6"/></g>
           </svg>
         </div>
-        <h3>设备模型库</h3>
-        <p>内置符合中国国标（GB）与国际电工委员会标准（IEC）的设备参数库，涵盖变压器、线路、开关、逆变器等核心设备类型，支持 pandapower 兼容格式。</p>
+        <h3>Equipment Model Library</h3>
+        <p>Built-in equipment parameter library compliant with Chinese national standards (GB) and IEC standards, covering transformers, lines, switches, inverters, and other core equipment types, with pandapower-compatible format support.</p>
       </div>
       <div class="cap-card reveal" style="--d:.24s">
         <div class="cap-visual">
@@ -463,8 +459,8 @@
             </g>
           </svg>
         </div>
-        <h3>多智能体协作</h3>
-        <p>基于电网拓扑的 Agent 组织模型：同一厂站内的 Agent 自动形成协作组，跨厂站 Agent 通过拓扑路径进行结构化通信，避免全局广播的混乱。</p>
+        <h3>Multi-Agent Collaboration</h3>
+        <p>Grid topology-based Agent organization model: Agents within the same substation automatically form collaboration groups; cross-substation Agents communicate structurally via topology paths, avoiding global broadcast chaos.</p>
       </div>
       <div class="cap-card reveal" style="--d:.32s">
         <div class="cap-visual">
@@ -476,8 +472,8 @@
             <g stroke="currentColor" stroke-width="1" opacity=".3"><line x1="20" y1="100" x2="180" y2="100"/><line x1="20" y1="20" x2="180" y2="20" stroke-dasharray="3 3"/></g>
           </svg>
         </div>
-        <h3>时序原生操作</h3>
-        <p>实时数据流、历史数据回溯、预测数据推演——三种时间模式在内核层统一抽象，Agent 可无缝切换"回顾-感知-预判"的时间视角。</p>
+        <h3>Time-Series Native Operations</h3>
+        <p>Real-time data streams, historical lookback, predictive inference — three temporal modes unified at the kernel level. Agents seamlessly switch between "review-perceive-predict" temporal perspectives.</p>
       </div>
       <div class="cap-card reveal" style="--d:.4s">
         <div class="cap-visual">
@@ -486,142 +482,142 @@
             <path d="M88 60 L97 70 L114 50" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <h3>安全守卫</h3>
-        <p>内核级安全守卫：N-1 安全校验、热稳定校验、电压越限检测。安全约束不可被 Agent 绕过或降级，是操作系统的"硬法律"。</p>
+        <h3>Safety Guard</h3>
+        <p>Kernel-level safety guard: N-1 security verification, thermal stability check, voltage limit detection. Safety constraints cannot be bypassed or degraded by Agents — they are the "hard laws" of the operating system.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ Crate 索引 ============ -->
+<!-- ============ Crate Index ============ -->
 <section class="section" id="crates">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-tag">05 / 模块</span>
-      <h2 class="section-title">Crate <span class="grad-text">索引</span></h2>
-      <p class="section-desc">12 个 Rust Crate 构成的模块化体系，各司其职，松耦合高内聚。基于 Rust 构建，保障内存安全与高性能。</p>
+      <span class="section-tag">05 / Modules</span>
+      <h2 class="section-title">Crate <span class="grad-text">Index</span></h2>
+      <p class="section-desc">A modular system of 12 Rust Crates, each with clear responsibilities, loosely coupled and highly cohesive. Built on Rust for memory safety and high performance.</p>
     </div>
 
     <div class="crate-grid reveal">
       <div class="crate-card">
         <div class="crate-head"><span class="crate-name">eneros-core</span><span class="crate-path">crates/eneros-core/</span></div>
-        <p class="crate-desc">统一类型、错误、配置</p>
+        <p class="crate-desc">Unified types, errors, config</p>
         <div class="crate-types"><span>EnerOSError</span><span>PowerSystemState</span><span>ElementId</span></div>
       </div>
       <div class="crate-card">
         <div class="crate-head"><span class="crate-name">eneros-topology</span><span class="crate-path">crates/eneros-topology/</span></div>
-        <p class="crate-desc">电网拓扑图建模与分析</p>
+        <p class="crate-desc">Grid topology graph modeling & analysis</p>
         <div class="crate-types"><span>NetworkGraph</span><span>TopologyEngine</span><span>Bus</span><span>Branch</span></div>
       </div>
       <div class="crate-card crate-card-feature">
         <div class="crate-head"><span class="crate-name">eneros-powerflow</span><span class="crate-path">crates/eneros-powerflow/</span></div>
-        <p class="crate-desc">Newton-Raphson 潮流求解</p>
+        <p class="crate-desc">Newton-Raphson power flow solver</p>
         <div class="crate-types"><span>PowerFlowSolver</span><span>YBusMatrix</span><span>JacobianMatrix</span></div>
       </div>
       <div class="crate-card crate-card-feature">
         <div class="crate-head"><span class="crate-name">eneros-constraint</span><span class="crate-path">crates/eneros-constraint/</span></div>
-        <p class="crate-desc">安全约束校验与执行</p>
+        <p class="crate-desc">Safety constraint verification & enforcement</p>
         <div class="crate-types"><span>ConstraintEngine</span><span>Violation</span><span>ResponseStrategy</span></div>
       </div>
       <div class="crate-card">
         <div class="crate-head"><span class="crate-name">eneros-equipment</span><span class="crate-path">crates/eneros-equipment/</span></div>
-        <p class="crate-desc">设备参数模型库</p>
+        <p class="crate-desc">Equipment parameter model library</p>
         <div class="crate-types"><span>EquipmentModel</span><span>TransmissionLine</span><span>TwoWindingTransformer</span></div>
       </div>
       <div class="crate-card">
         <div class="crate-head"><span class="crate-name">eneros-timeseries</span><span class="crate-path">crates/eneros-timeseries/</span></div>
-        <p class="crate-desc">时序数据存储与查询</p>
+        <p class="crate-desc">Time-series data storage & query</p>
         <div class="crate-types"><span>TimeSeriesEngine</span><span>TimeSeriesQuery</span><span>Aggregation</span></div>
       </div>
       <div class="crate-card">
         <div class="crate-head"><span class="crate-name">eneros-eventbus</span><span class="crate-path">crates/eneros-eventbus/</span></div>
-        <p class="crate-desc">事件驱动通信总线</p>
+        <p class="crate-desc">Event-driven communication bus</p>
         <div class="crate-types"><span>EventBus</span><span>Event</span><span>EventHandler</span></div>
       </div>
       <div class="crate-card crate-card-feature">
         <div class="crate-head"><span class="crate-name">eneros-gateway</span><span class="crate-path">crates/eneros-gateway/</span></div>
-        <p class="crate-desc">安全网关与命令管控</p>
+        <p class="crate-desc">Safety gateway & command control</p>
         <div class="crate-types"><span>SafetyGateway</span><span>Command</span><span>SafetyCheck</span><span>CommandPriority</span></div>
       </div>
       <div class="crate-card">
         <div class="crate-head"><span class="crate-name">eneros-device</span><span class="crate-path">crates/eneros-device/</span></div>
-        <p class="crate-desc">设备通信与协议适配</p>
+        <p class="crate-desc">Device communication & protocol adaptation</p>
         <div class="crate-types"><span>ProtocolAdapter</span><span>DeviceManager</span><span>HealthMonitor</span></div>
       </div>
       <div class="crate-card">
         <div class="crate-head"><span class="crate-name">eneros-api</span><span class="crate-path">crates/eneros-api/</span></div>
-        <p class="crate-desc">CLI / HTTP API 服务</p>
+        <p class="crate-desc">CLI / HTTP API service</p>
         <div class="crate-types"><span>ApiServer</span><span>ApiClient</span><span>ApiResponse</span></div>
       </div>
       <div class="crate-card">
         <div class="crate-head"><span class="crate-name">eneros-bridge</span><span class="crate-path">crates/eneros-bridge/</span></div>
-        <p class="crate-desc">Python 桥接 (cnpower/pandapower)</p>
+        <p class="crate-desc">Python bridge (cnpower/pandapower)</p>
         <div class="crate-types"><span>PythonBridge</span><span>CnpowerEquipmentLoader</span></div>
       </div>
       <div class="crate-card">
         <div class="crate-head"><span class="crate-name">eneros-network</span><span class="crate-path">crates/eneros-network/</span></div>
-        <p class="crate-desc">拓扑-潮流统一管线 <em>(规划中)</em></p>
+        <p class="crate-desc">Topology-powerflow unified pipeline <em>(planned)</em></p>
         <div class="crate-types"><span class="crate-soon">coming soon</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 应用场景 ============ -->
+<!-- ============ Application Scenarios ============ -->
 <section class="section section-alt" id="scenarios">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-tag">06 / 场景</span>
-      <h2 class="section-title">应用<span class="grad-text">场景</span></h2>
-      <p class="section-desc">覆盖电力能源全生命周期的智能化应用场景。</p>
+      <span class="section-tag">06 / Scenarios</span>
+      <h2 class="section-title">Application <span class="grad-text">Scenarios</span></h2>
+      <p class="section-desc">Intelligent application scenarios covering the full lifecycle of power and energy.</p>
     </div>
 
     <div class="scenario-list">
       <div class="scenario-item reveal" style="--d:0s">
         <div class="scenario-icon">⚡</div>
         <div class="scenario-body">
-          <h3>智能调度 <span class="scenario-agent">Dispatch Agent</span></h3>
-          <p>基于负荷预测与新能源出力的日前 / 日内 / 实时调度，实现经济性与安全性的最优平衡。</p>
+          <h3>Intelligent Dispatch <span class="scenario-agent">Dispatch Agent</span></h3>
+          <p>Day-ahead / intra-day / real-time dispatch based on load forecasting and renewable generation, achieving optimal balance between economics and safety.</p>
         </div>
         <div class="scenario-arrow">→</div>
       </div>
       <div class="scenario-item reveal" style="--d:.08s">
         <div class="scenario-icon">🔧</div>
         <div class="scenario-body">
-          <h3>智能运维 <span class="scenario-agent">Operation Agent</span></h3>
-          <p>设备状态监测、故障诊断与检修决策，从被动维修转向预测性维护。</p>
+          <h3>Intelligent Operations <span class="scenario-agent">Operation Agent</span></h3>
+          <p>Equipment condition monitoring, fault diagnosis, and maintenance decisions — shifting from reactive repair to predictive maintenance.</p>
         </div>
         <div class="scenario-arrow">→</div>
       </div>
       <div class="scenario-item reveal" style="--d:.16s">
         <div class="scenario-icon">📐</div>
         <div class="scenario-body">
-          <h3>配网规划 <span class="scenario-agent">Planning Agent</span></h3>
-          <p>负荷增长预测下的网架扩展与设备选型，支撑新型电力系统建设。</p>
+          <h3>Distribution Planning <span class="scenario-agent">Planning Agent</span></h3>
+          <p>Network expansion and equipment selection under load growth forecasting, supporting new power system construction.</p>
         </div>
         <div class="scenario-arrow">→</div>
       </div>
       <div class="scenario-item reveal" style="--d:.24s">
         <div class="scenario-icon">💹</div>
         <div class="scenario-body">
-          <h3>电力交易 <span class="scenario-agent">Trading Agent</span></h3>
-          <p>现货市场报价策略与结算分析，适应电力市场化改革浪潮。</p>
+          <h3>Power Trading <span class="scenario-agent">Trading Agent</span></h3>
+          <p>Spot market bidding strategies and settlement analysis, adapting to the wave of power market reform.</p>
         </div>
         <div class="scenario-arrow">→</div>
       </div>
       <div class="scenario-item reveal" style="--d:.32s">
         <div class="scenario-icon">🛡️</div>
         <div class="scenario-body">
-          <h3>故障自愈 <span class="scenario-agent">Self-Healing Agent</span></h3>
-          <p>故障定位、隔离与非故障区域恢复供电，毫秒级响应提升供电可靠性。</p>
+          <h3>Self-Healing <span class="scenario-agent">Self-Healing Agent</span></h3>
+          <p>Fault location, isolation, and non-fault area power restoration — millisecond-level response improving supply reliability.</p>
         </div>
         <div class="scenario-arrow">→</div>
       </div>
       <div class="scenario-item reveal" style="--d:.4s">
         <div class="scenario-icon">🌱</div>
         <div class="scenario-body">
-          <h3>能效优化 <span class="scenario-agent">Energy Agent</span></h3>
-          <p>工商业用户的用能优化与需求响应，助力双碳目标实现。</p>
+          <h3>Energy Efficiency <span class="scenario-agent">Energy Agent</span></h3>
+          <p>Energy optimization and demand response for commercial and industrial users, supporting dual carbon goals.</p>
         </div>
         <div class="scenario-arrow">→</div>
       </div>
@@ -629,75 +625,75 @@
   </div>
 </section>
 
-<!-- ============ 对比 ============ -->
+<!-- ============ Comparison ============ -->
 <section class="section" id="compare">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-tag">07 / 对比</span>
-      <h2 class="section-title">独树一<span class="grad-text">帜</span></h2>
-      <p class="section-desc">EnerOS 在电力物理建模、AI 原生与安全约束三维度同时领先。</p>
+      <span class="section-tag">07 / Comparison</span>
+      <h2 class="section-title">Uniquely <span class="grad-text">Positioned</span></h2>
+      <p class="section-desc">EnerOS leads simultaneously across three dimensions: power physics modeling, AI nativeness, and safety constraints.</p>
     </div>
 
     <div class="compare-table reveal">
       <div class="compare-row compare-row-head">
-        <div class="compare-cell">维度</div>
-        <div class="compare-cell">通用 Agent 框架</div>
+        <div class="compare-cell">Dimension</div>
+        <div class="compare-cell">General Agent Framework</div>
         <div class="compare-cell">SCADA / EMS</div>
         <div class="compare-cell compare-cell-enos">EnerOS</div>
       </div>
       <div class="compare-row">
-        <div class="compare-cell compare-cell-dim">电力物理建模</div>
-        <div class="compare-cell"><span class="badge badge-bad">无 / 外挂</span></div>
-        <div class="compare-cell"><span class="badge badge-mid">深度但封闭</span></div>
-        <div class="compare-cell compare-cell-enos"><span class="badge badge-good">原生内核</span></div>
+        <div class="compare-cell compare-cell-dim">Power Physics Modeling</div>
+        <div class="compare-cell"><span class="badge badge-bad">None / Bolt-on</span></div>
+        <div class="compare-cell"><span class="badge badge-mid">Deep but Closed</span></div>
+        <div class="compare-cell compare-cell-enos"><span class="badge badge-good">Native Kernel</span></div>
       </div>
       <div class="compare-row">
-        <div class="compare-cell compare-cell-dim">AI Agent 支持</div>
-        <div class="compare-cell"><span class="badge badge-good">原生</span></div>
-        <div class="compare-cell"><span class="badge badge-bad">无</span></div>
-        <div class="compare-cell compare-cell-enos"><span class="badge badge-good">原生</span></div>
+        <div class="compare-cell compare-cell-dim">AI Agent Support</div>
+        <div class="compare-cell"><span class="badge badge-good">Native</span></div>
+        <div class="compare-cell"><span class="badge badge-bad">None</span></div>
+        <div class="compare-cell compare-cell-enos"><span class="badge badge-good">Native</span></div>
       </div>
       <div class="compare-row">
-        <div class="compare-cell compare-cell-dim">安全约束保障</div>
-        <div class="compare-cell"><span class="badge badge-bad">提示词级</span></div>
-        <div class="compare-cell"><span class="badge badge-mid">硬编码</span></div>
-        <div class="compare-cell compare-cell-enos"><span class="badge badge-good">内核级强制</span></div>
+        <div class="compare-cell compare-cell-dim">Safety Constraint Guarantee</div>
+        <div class="compare-cell"><span class="badge badge-bad">Prompt-level</span></div>
+        <div class="compare-cell"><span class="badge badge-mid">Hard-coded</span></div>
+        <div class="compare-cell compare-cell-enos"><span class="badge badge-good">Kernel-level Enforcement</span></div>
       </div>
       <div class="compare-row">
-        <div class="compare-cell compare-cell-dim">拓扑感知</div>
-        <div class="compare-cell"><span class="badge badge-bad">无</span></div>
-        <div class="compare-cell"><span class="badge badge-good">有</span></div>
-        <div class="compare-cell compare-cell-enos"><span class="badge badge-good">Agent 原生感知</span></div>
+        <div class="compare-cell compare-cell-dim">Topology Awareness</div>
+        <div class="compare-cell"><span class="badge badge-bad">None</span></div>
+        <div class="compare-cell"><span class="badge badge-good">Yes</span></div>
+        <div class="compare-cell compare-cell-enos"><span class="badge badge-good">Agent-Native Awareness</span></div>
       </div>
       <div class="compare-row">
-        <div class="compare-cell compare-cell-dim">多智能体协作</div>
-        <div class="compare-cell"><span class="badge badge-mid">通用协议</span></div>
-        <div class="compare-cell"><span class="badge badge-bad">无</span></div>
-        <div class="compare-cell compare-cell-enos"><span class="badge badge-good">拓扑结构化协作</span></div>
+        <div class="compare-cell compare-cell-dim">Multi-Agent Collaboration</div>
+        <div class="compare-cell"><span class="badge badge-mid">General Protocol</span></div>
+        <div class="compare-cell"><span class="badge badge-bad">None</span></div>
+        <div class="compare-cell compare-cell-enos"><span class="badge badge-good">Topology-Structured Collaboration</span></div>
       </div>
       <div class="compare-row">
-        <div class="compare-cell compare-cell-dim">开放性</div>
-        <div class="compare-cell"><span class="badge badge-good">高</span></div>
-        <div class="compare-cell"><span class="badge badge-bad">低</span></div>
-        <div class="compare-cell compare-cell-enos"><span class="badge badge-good">高（插件架构）</span></div>
+        <div class="compare-cell compare-cell-dim">Openness</div>
+        <div class="compare-cell"><span class="badge badge-good">High</span></div>
+        <div class="compare-cell"><span class="badge badge-bad">Low</span></div>
+        <div class="compare-cell compare-cell-enos"><span class="badge badge-good">High (Plugin Architecture)</span></div>
       </div>
       <div class="compare-row">
-        <div class="compare-cell compare-cell-dim">设备模型标准</div>
-        <div class="compare-cell"><span class="badge badge-bad">无</span></div>
-        <div class="compare-cell"><span class="badge badge-mid">厂商私有</span></div>
-        <div class="compare-cell compare-cell-enos"><span class="badge badge-good">IEC / GB 标准</span></div>
+        <div class="compare-cell compare-cell-dim">Equipment Model Standards</div>
+        <div class="compare-cell"><span class="badge badge-bad">None</span></div>
+        <div class="compare-cell"><span class="badge badge-mid">Vendor Proprietary</span></div>
+        <div class="compare-cell compare-cell-enos"><span class="badge badge-good">IEC / GB Standards</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 快速开始 ============ -->
+<!-- ============ Quick Start ============ -->
 <section class="section section-alt" id="quickstart">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-tag">08 / 开始</span>
-      <h2 class="section-title">快速<span class="grad-text">开始</span></h2>
-      <p class="section-desc">基于 Rust 构建，几行命令即可启动。前置条件：Rust 1.70+ 与 Cargo。</p>
+      <span class="section-tag">08 / Start</span>
+      <h2 class="section-title">Quick <span class="grad-text">Start</span></h2>
+      <p class="section-desc">Built on Rust, start in a few commands. Prerequisites: Rust 1.70+ and Cargo.</p>
     </div>
 
     <div class="terminal reveal">
@@ -708,21 +704,21 @@
         <span class="terminal-title">bash — EnerOS</span>
       </div>
       <div class="terminal-body">
-        <div class="term-line"><span class="term-prompt">$</span> <span class="term-comment"># 克隆仓库</span></div>
+        <div class="term-line"><span class="term-prompt">$</span> <span class="term-comment"># Clone repository</span></div>
         <div class="term-line"><span class="term-prompt">$</span> git clone https://github.com/Gawg-AI/EnerOS.git</div>
         <div class="term-line"><span class="term-prompt">$</span> cd EnerOS</div>
         <div class="term-line"></div>
-        <div class="term-line"><span class="term-prompt">$</span> <span class="term-comment"># 构建项目</span></div>
+        <div class="term-line"><span class="term-prompt">$</span> <span class="term-comment"># Build project</span></div>
         <div class="term-line"><span class="term-prompt">$</span> cargo build --release</div>
         <div class="term-line"><span class="term-out">   Compiling eneros-core ...</span></div>
         <div class="term-line"><span class="term-out">   Compiling eneros-powerflow ...</span></div>
         <div class="term-line"><span class="term-ok">   Finished release [optimized]</span></div>
         <div class="term-line"></div>
-        <div class="term-line"><span class="term-prompt">$</span> <span class="term-comment"># 启动 API 服务器</span></div>
+        <div class="term-line"><span class="term-prompt">$</span> <span class="term-comment"># Start API server</span></div>
         <div class="term-line"><span class="term-prompt">$</span> cargo run --bin eneros -- serve --host 0.0.0.0 --port 8080</div>
         <div class="term-line"><span class="term-out">   EnerOS API listening on 0.0.0.0:8080</span></div>
         <div class="term-line"></div>
-        <div class="term-line"><span class="term-prompt">$</span> <span class="term-comment"># 执行潮流计算</span></div>
+        <div class="term-line"><span class="term-prompt">$</span> <span class="term-comment"># Run power flow</span></div>
         <div class="term-line"><span class="term-prompt">$</span> cargo run --bin eneros -- power-flow --case ieee14</div>
         <div class="term-line"><span class="term-ok">   ✓ Power flow converged in 4 iterations</span></div>
       </div>
@@ -730,13 +726,13 @@
   </div>
 </section>
 
-<!-- ============ 路线图 ============ -->
+<!-- ============ Roadmap ============ -->
 <section class="section" id="roadmap">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-tag">09 / 路线图</span>
-      <h2 class="section-title">演进<span class="grad-text">路线</span></h2>
-      <p class="section-desc">14 个阶段的持续演进，从内核基座到确定性决策闭环。</p>
+      <span class="section-tag">09 / Roadmap</span>
+      <h2 class="section-title">Evolution <span class="grad-text">Roadmap</span></h2>
+      <p class="section-desc">14 phases of continuous evolution, from kernel foundation to deterministic decision loop.</p>
     </div>
 
     <div class="roadmap-timeline reveal">
@@ -746,209 +742,209 @@
         <div class="road-marker road-done"><span>01</span></div>
         <div class="road-content">
           <div class="road-phase">Phase 1</div>
-          <h4>内核基座</h4>
-          <p>拓扑引擎、潮流计算内核、设备模型库</p>
+          <h4>Kernel Foundation</h4>
+          <p>Topology engine, power flow kernel, equipment model library</p>
         </div>
       </div>
       <div class="road-item" style="--i:2">
         <div class="road-marker road-done"><span>02</span></div>
         <div class="road-content">
           <div class="road-phase">Phase 2</div>
-          <h4>Agent 运行时</h4>
-          <p>Agent 生命周期管理、记忆系统、工具引擎</p>
+          <h4>Agent Runtime</h4>
+          <p>Agent lifecycle management, memory system, tool engine</p>
         </div>
       </div>
       <div class="road-item" style="--i:3">
         <div class="road-marker road-done"><span>03</span></div>
         <div class="road-content">
           <div class="road-phase">Phase 3</div>
-          <h4>电网感知上下文</h4>
-          <p>拓扑感知注入、约束校验守卫、事件总线</p>
+          <h4>Grid-Aware Context</h4>
+          <p>Topology-aware injection, constraint verification guard, event bus</p>
         </div>
       </div>
       <div class="road-item" style="--i:4">
         <div class="road-marker road-done"><span>04</span></div>
         <div class="road-content">
           <div class="road-phase">Phase 4</div>
-          <h4>多智能体协作</h4>
-          <p>多智能体协作协议、拓扑结构化通信</p>
+          <h4>Multi-Agent Collaboration</h4>
+          <p>Multi-agent collaboration protocol, topology-structured communication</p>
         </div>
       </div>
       <div class="road-item" style="--i:5">
         <div class="road-marker road-done"><span>05</span></div>
         <div class="road-content">
           <div class="road-phase">Phase 5</div>
-          <h4>基础设施适配器</h4>
-          <p>SCADA / IEC 61850 / IEC 104 / MQTT 协议适配器</p>
+          <h4>Infrastructure Adapters</h4>
+          <p>SCADA / IEC 61850 / IEC 104 / MQTT protocol adapters</p>
         </div>
       </div>
       <div class="road-item" style="--i:6">
         <div class="road-marker road-done"><span>06</span></div>
         <div class="road-content">
           <div class="road-phase">Phase 6</div>
-          <h4>领域应用</h4>
-          <p>调度 Agent、运维 Agent、自愈 Agent、领域协作协议</p>
+          <h4>Domain Applications</h4>
+          <p>Dispatch Agent, Operation Agent, Self-Healing Agent, domain collaboration protocol</p>
         </div>
       </div>
       <div class="road-item" style="--i:7">
         <div class="road-marker road-done"><span>07</span></div>
         <div class="road-content">
           <div class="road-phase">Phase 7</div>
-          <h4>实时闭环与系统集成</h4>
-          <p>SCADA 数据管线、DC-OPF、状态估计、Web 仪表盘</p>
+          <h4>Real-Time Loop & System Integration</h4>
+          <p>SCADA data pipeline, DC-OPF, state estimation, web dashboard</p>
         </div>
       </div>
       <div class="road-item" style="--i:8">
         <div class="road-marker road-done"><span>08</span></div>
         <div class="road-content">
           <div class="road-phase">Phase 8</div>
-          <h4>深度集成与生产化</h4>
-          <p>E2E 集成测试、ApiClient 真实 HTTP、SQLite 持久化</p>
+          <h4>Deep Integration & Production</h4>
+          <p>E2E integration tests, ApiClient real HTTP, SQLite persistence</p>
         </div>
       </div>
       <div class="road-item" style="--i:9">
         <div class="road-marker road-done"><span>09</span></div>
         <div class="road-content">
           <div class="road-phase">Phase 9</div>
-          <h4>修复真实 Bug 与消除空壳</h4>
-          <p>死锁修复、SelfHealingAgent 联锁校验、clippy 零警告</p>
+          <h4>Real Bug Fixes & Shell Elimination</h4>
+          <p>Deadlock fix, SelfHealingAgent interlock verification, clippy zero warnings</p>
         </div>
       </div>
       <div class="road-item" style="--i:10">
         <div class="road-marker road-done"><span>10</span></div>
         <div class="road-content">
           <div class="road-phase">Phase 10</div>
-          <h4>精度验证与 LLM 推理集成</h4>
-          <p>IEEE 14-bus 精度验证、LlmReasoningEngine、降级回退机制</p>
+          <h4>Accuracy Verification & LLM Integration</h4>
+          <p>IEEE 14-bus accuracy verification, LlmReasoningEngine, degradation fallback</p>
         </div>
       </div>
       <div class="road-item" style="--i:11">
         <div class="road-marker road-done"><span>11</span></div>
         <div class="road-content">
           <div class="road-phase">Phase 11</div>
-          <h4>rig Tool 实化与统一推理引擎</h4>
-          <p>rig-core 0.38 集成、4 个电力系统 Tool 实化、统一推理引擎</p>
+          <h4>rig Tool Materialization & Unified Reasoning</h4>
+          <p>rig-core 0.38 integration, 4 power system tools materialized, unified reasoning engine</p>
         </div>
       </div>
       <div class="road-item" style="--i:12">
         <div class="road-marker road-done"><span>12</span></div>
         <div class="road-content">
           <div class="road-phase">Phase 12</div>
-          <h4>实时执行域</h4>
-          <p>优先级命令队列、实时执行器、看门狗超时保护</p>
+          <h4>Real-Time Execution Domain</h4>
+          <p>Priority command queue, real-time executor, watchdog timeout protection</p>
         </div>
       </div>
       <div class="road-item" style="--i:13">
         <div class="road-marker road-done"><span>13</span></div>
         <div class="road-content">
           <div class="road-phase">Phase 13</div>
-          <h4>约束驱动的确定性决策管道</h4>
-          <p>结构化动作输出、可行性投影、三阶段决策管道、反馈重推理</p>
+          <h4>Constraint-Driven Deterministic Decision Pipeline</h4>
+          <p>Structured action output, feasibility projection, 3-stage decision pipeline, feedback re-reasoning</p>
         </div>
       </div>
       <div class="road-item road-item-final" style="--i:14">
         <div class="road-marker road-current"><span>14</span></div>
         <div class="road-content">
           <div class="road-phase">Phase 14</div>
-          <h4>接通确定性决策闭环</h4>
-          <p>消除"幽灵闭环"、FeedbackLoop 接入、5 个端到端闭环集成测试</p>
+          <h4>Closing the Deterministic Decision Loop</h4>
+          <p>Eliminate "phantom loops", FeedbackLoop integration, 5 end-to-end closed-loop integration tests</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 未来趋势 ============ -->
+<!-- ============ Future Trends ============ -->
 <section class="section section-alt" id="future">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-tag">10 / 展望</span>
-      <h2 class="section-title">未来<span class="grad-text">趋势</span></h2>
-      <p class="section-desc">从能源互联网到具身智能体，EnerOS 定义下一代电力系统的智能底座。</p>
+      <span class="section-tag">10 / Outlook</span>
+      <h2 class="section-title">Future <span class="grad-text">Trends</span></h2>
+      <p class="section-desc">From energy internet to embodied agents, EnerOS defines the intelligent foundation for next-generation power systems.</p>
     </div>
 
     <div class="future-grid">
       <div class="future-card reveal" style="--d:0s">
-        <div class="future-tag">趋势 01</div>
-        <h3>新型电力系统</h3>
-        <p>高比例新能源接入、高比例电力电子设备带来电网形态根本性变革。源-网-荷-储协同控制、虚拟电厂聚合、微电网自治将成为常态，亟需原生理解电力物理规律的智能体来驾驭日益复杂的电网。</p>
+        <div class="future-tag">Trend 01</div>
+        <h3>New Power Systems</h3>
+        <p>High penetration of renewables and power electronics brings fundamental grid transformation. Source-grid-load-storage coordinated control, virtual power plant aggregation, and microgrid autonomy will become the norm, urgently requiring agents that natively understand power physics to manage increasingly complex grids.</p>
       </div>
       <div class="future-card reveal" style="--d:.08s">
-        <div class="future-tag">趋势 02</div>
-        <h3>能源 &times; AI 大模型</h3>
-        <p>大语言模型与领域推理引擎深度融合，从"知识检索"走向"自主决策"。LLM 提供意图理解与自然语言交互，EnerOS 内核提供物理可行域保障，共同实现可信赖的能源智能体。</p>
+        <div class="future-tag">Trend 02</div>
+        <h3>Energy &times; Large AI Models</h3>
+        <p>Deep fusion of large language models and domain reasoning engines, evolving from "knowledge retrieval" to "autonomous decision-making". LLMs provide intent understanding and natural language interaction, while EnerOS kernel provides physically feasible domain guarantees — together realizing trustworthy energy agents.</p>
       </div>
       <div class="future-card reveal" style="--d:.16s">
-        <div class="future-tag">趋势 03</div>
-        <h3>能源互联网</h3>
-        <p>电力、天然气、热力、交通多能耦合，能源系统向互联网形态演进。EnerOS 的图原生架构天然适配多能网络的拓扑建模，为跨能源类型的智能调度提供统一基础。</p>
+        <div class="future-tag">Trend 03</div>
+        <h3>Energy Internet</h3>
+        <p>Multi-energy coupling of electricity, gas, heat, and transport — energy systems evolving toward internet architecture. EnerOS's graph-native architecture naturally fits multi-energy network topology modeling, providing a unified foundation for cross-energy-type intelligent scheduling.</p>
       </div>
       <div class="future-card reveal" style="--d:.24s">
-        <div class="future-tag">趋势 04</div>
-        <h3>双碳与电力市场化</h3>
-        <p>"双碳"目标推动能源结构深度调整，全国统一电力市场建设加速。EnerOS 的交易 Agent 与规划 Agent 将成为新型电力市场中最活跃的智能参与者。</p>
+        <div class="future-tag">Trend 04</div>
+        <h3>Dual Carbon & Power Market</h3>
+        <p>Dual carbon goals drive deep energy restructuring; national unified power market construction accelerates. EnerOS's Trading Agent and Planning Agent will become the most active intelligent participants in the new power market.</p>
       </div>
       <div class="future-card reveal" style="--d:.32s">
-        <div class="future-tag">趋势 05</div>
-        <h3>具身智能体</h3>
-        <p>从"软件 Agent"到"具身 Agent"——巡检机器人、智能开关柜、自主运维设备将成为电网中的具身智能体。EnerOS 的 Agent-as-Grid-Node 范式天然支撑物理实体的智能接入。</p>
+        <div class="future-tag">Trend 05</div>
+        <h3>Embodied Agents</h3>
+        <p>From "software Agents" to "embodied Agents" — inspection robots, smart switchgear, and autonomous maintenance equipment will become embodied agents in the grid. EnerOS's Agent-as-Grid-Node paradigm natively supports intelligent integration of physical entities.</p>
       </div>
       <div class="future-card future-card-accent reveal" style="--d:.4s">
-        <div class="future-tag future-tag-accent">趋势 06</div>
-        <h3>操作系统级智能基座</h3>
-        <p>正如 Linux 之于互联网、Android 之于移动端，EnerOS 致力于成为能源智能时代的操作系统底座——一个让万千能源智能体得以安全、高效、原生协作的通用平台。</p>
+        <div class="future-tag future-tag-accent">Trend 06</div>
+        <h3>OS-Level Intelligent Foundation</h3>
+        <p>Just as Linux is to the internet and Android is to mobile, EnerOS aims to be the OS foundation of the energy intelligence era — a universal platform enabling thousands of energy agents to collaborate safely, efficiently, and natively.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 技术设计原则 ============ -->
+<!-- ============ Technical Principles ============ -->
 <section class="section" id="tech-principles">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-tag">11 / 工程</span>
-      <h2 class="section-title">技术<span class="grad-text">原则</span></h2>
-      <p class="section-desc">工程实现层面的五项核心准则。</p>
+      <span class="section-tag">11 / Engineering</span>
+      <h2 class="section-title">Technical <span class="grad-text">Principles</span></h2>
+      <p class="section-desc">Five core principles at the engineering implementation level.</p>
     </div>
 
     <div class="tech-principles reveal">
-      <div class="tp-item"><span class="tp-key">内核-用户分离</span><span class="tp-val">物理约束执行在内核层，Agent 逻辑在用户层，安全边界清晰</span></div>
-      <div class="tp-item"><span class="tp-key">图为中心</span><span class="tp-val">电网拓扑图是系统的核心索引，一切操作围绕图结构展开</span></div>
-      <div class="tp-item"><span class="tp-key">事件驱动</span><span class="tp-val">基于事件总线的异步架构，适配电力系统的实时响应需求</span></div>
-      <div class="tp-item"><span class="tp-key">插件架构</span><span class="tp-val">设备协议、求解器、Agent 能力均以插件形式接入，可扩展</span></div>
-      <div class="tp-item"><span class="tp-key">标准合规</span><span class="tp-val">遵循 IEC 61850 / IEC 60870-5-104 / GB 系列标准</span></div>
+      <div class="tp-item"><span class="tp-key">Kernel-User Separation</span><span class="tp-val">Physical constraints execute in kernel layer, Agent logic in user layer, clear safety boundary</span></div>
+      <div class="tp-item"><span class="tp-key">Graph-Centric</span><span class="tp-val">Grid topology graph is the system's core index; all operations revolve around graph structure</span></div>
+      <div class="tp-item"><span class="tp-key">Event-Driven</span><span class="tp-val">Event bus-based async architecture, adapting to power system real-time response needs</span></div>
+      <div class="tp-item"><span class="tp-key">Plugin Architecture</span><span class="tp-val">Device protocols, solvers, and Agent capabilities all plug in, extensible</span></div>
+      <div class="tp-item"><span class="tp-key">Standards Compliance</span><span class="tp-val">Compliant with IEC 61850 / IEC 60870-5-104 / GB series standards</span></div>
     </div>
 
     <div class="ack reveal">
-      <h3>致谢开源社区</h3>
+      <h3>Acknowledging Open Source</h3>
       <div class="ack-items">
-        <a href="https://github.com/e2nIEE/pandapower" target="_blank" rel="noopener" class="ack-item">pandapower<small>电力系统分析</small></a>
-        <a href="https://github.com/PowerGridModel/power-grid-model" target="_blank" rel="noopener" class="ack-item">PowerGridModel<small>高性能潮流计算</small></a>
-        <a href="https://github.com/mz-automation/libiec61850" target="_blank" rel="noopener" class="ack-item">libIEC61850<small>IEC 61850 协议</small></a>
+        <a href="https://github.com/e2nIEE/pandapower" target="_blank" rel="noopener" class="ack-item">pandapower<small>Power System Analysis</small></a>
+        <a href="https://github.com/PowerGridModel/power-grid-model" target="_blank" rel="noopener" class="ack-item">PowerGridModel<small>High-Performance Power Flow</small></a>
+        <a href="https://github.com/mz-automation/libiec61850" target="_blank" rel="noopener" class="ack-item">libIEC61850<small>IEC 61850 Protocol</small></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 最后 CTA ============ -->
+<!-- ============ Final CTA ============ -->
 <section class="section section-cta-final">
   <div class="container">
     <div class="cta-final reveal">
       <div class="cta-glow"></div>
-      <h2>让 Agent 天然<span class="grad-text">懂电</span></h2>
-      <p>从电力原生出发构建操作系统。聚能以枢，驱动万物智能。</p>
+      <h2>Make Agents Natively <span class="grad-text">Understand Power</span></h2>
+      <p>Build an OS power-natively from the ground up. Converge Energy, Orchestrate Intelligence.</p>
       <div class="cta-final-btns">
         <a href="https://github.com/Gawg-AI/EnerOS" target="_blank" rel="noopener" class="btn btn-primary">
           <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          在 GitHub 上参与共建
+          Contribute on GitHub
         </a>
-        <a href="#hero" class="btn btn-ghost">回到顶部 ↑</a>
+        <a href="#hero" class="btn btn-ghost">Back to Top ↑</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 页脚 ============ -->
+<!-- ============ Footer ============ -->
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
@@ -970,31 +966,31 @@
         </span>
         <span class="logo-text">Ener<span>OS</span></span>
       </a>
-      <p class="footer-tagline">聚能以枢，驱动万物智能<br>电力 / 能源 原生的智能体操作系统</p>
+      <p class="footer-tagline">Converge Energy, Orchestrate Intelligence<br>Power/Energy-Native Agent Operating System</p>
     </div>
     <div class="footer-col">
-      <h4>项目</h4>
+      <h4>Project</h4>
       <ul>
-        <li><a href="https://github.com/Gawg-AI/EnerOS" target="_blank" rel="noopener">GitHub 仓库</a></li>
-        <li><a href="#architecture">系统架构</a></li>
-        <li><a href="#roadmap">路线图</a></li>
-        <li><a href="#crates">Crate 索引</a></li>
+        <li><a href="https://github.com/Gawg-AI/EnerOS" target="_blank" rel="noopener">GitHub Repository</a></li>
+        <li><a href="#architecture">System Architecture</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#crates">Crate Index</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>资源</h4>
+      <h4>Resources</h4>
       <ul>
-        <li><a href="#philosophy">设计哲学</a></li>
-        <li><a href="#capabilities">核心能力</a></li>
-        <li><a href="#scenarios">应用场景</a></li>
-        <li><a href="#future">未来趋势</a></li>
+        <li><a href="#philosophy">Design Philosophy</a></li>
+        <li><a href="#capabilities">Core Capabilities</a></li>
+        <li><a href="#scenarios">Scenarios</a></li>
+        <li><a href="#future">Future Trends</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>社区</h4>
+      <h4>Community</h4>
       <ul>
-        <li><a href="https://github.com/Gawg-AI/EnerOS" target="_blank" rel="noopener">参与贡献</a></li>
-        <li><a href="https://github.com/Gawg-AI/EnerOS/issues" target="_blank" rel="noopener">问题反馈</a></li>
+        <li><a href="https://github.com/Gawg-AI/EnerOS" target="_blank" rel="noopener">Contribute</a></li>
+        <li><a href="https://github.com/Gawg-AI/EnerOS/issues" target="_blank" rel="noopener">Report Issues</a></li>
         <li>MIT License</li>
       </ul>
     </div>
@@ -1007,6 +1003,6 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="../script.js"></script>
 </body>
 </html>
